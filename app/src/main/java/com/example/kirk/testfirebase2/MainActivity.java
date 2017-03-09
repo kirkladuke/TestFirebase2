@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Email password SIGN UP
+        // for git, delete this comment
 
 
 
