@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.common.GoogleApiAvailability;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.common.api.GoogleApiActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -40,7 +43,7 @@ public class ProjectCreationActivity extends AppCompatActivity {
             public void onClick(View v) {
 
             // Create a child in root object
-            // assign value to child
+            // assign value to child object
 
                 String name = mNameField.getText().toString().trim();
                 String description = mDescription.getText().toString().trim();
@@ -49,6 +52,7 @@ public class ProjectCreationActivity extends AppCompatActivity {
 
                 datamap.put("Name", name);
                 datamap.put("Description", description);
+
 
                 mDatabase.push().setValue(datamap).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
