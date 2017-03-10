@@ -1,6 +1,7 @@
 package com.example.kirk.testfirebase2;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -75,36 +76,46 @@ public class RegisterActivity extends AppCompatActivity {
             && !TextUtils.isEmpty(password))
         {
 
-            mProgress.setMessage("Signing Up...");
-            mProgress.show();
-
-                    mauth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-
-                            if(task.isSuccessful())
-                            {
-
-                                String user_id = mauth.getCurrentUser().getUid();
-
-                                 //mDatabase.child(user_id);
-                                DatabaseReference current_user_db = mDatabase.child(user_id);
-
-                                current_user_db.child("first name").setValue(firstname);
-                                current_user_db.child("LastName").setValue(lastname);
-
-                                mProgress.dismiss();
-
-                            }else
-                                {
-
-                                    Toast.makeText(getApplicationContext(), "Did not work", Toast.LENGTH_LONG).show();
-                                }
 
 
+            if(password.length() >= 8) {
+
+                mProgress.setMessage("Signing Up...");
+                mProgress.show();
+
+                mauth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if (task.isSuccessful()) {
+
+                            String user_id = mauth.getCurrentUser().getUid();
+
+                            //mDatabase.child(user_id);
+                            DatabaseReference current_user_db = mDatabase.child(user_id);
+
+                            current_user_db.child("first name").setValue(firstname);
+                            current_user_db.child("LastName").setValue(lastname);
+
+                            mProgress.dismiss();
+                            Intent openMainActivity = new Intent(RegisterActivity.this, MainActivity.class);
+                            startActivity(openMainActivity);
+
+                        } else {
+                                //  Make exception
+                            Toast.makeText(getApplicationContext(), "Did not work", Toast.LENGTH_LONG).show();
                         }
 
-                    });
+
+                    }
+
+                });
+
+            } else
+                {
+                    //  Make exception
+                    Toast.makeText(getApplicationContext(), "Password must be at least 8 characters long", Toast.LENGTH_LONG).show();
+                }
         }
 
 
