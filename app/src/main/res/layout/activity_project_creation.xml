@@ -10,133 +10,235 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.kirk.testfirebase2.ProjectCreationActivity">
 
-    <TextView
-        android:text="Date Needed Done"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtDateDoneBy"
-        android:textSize="16sp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="83dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_below="@+id/linearLayout"
+        android:id="@+id/relativeLayout">
 
-    <EditText
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/txtLength"
-        android:id="@+id/txtInputName"
-        android:hint="Project Name"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_alignParentEnd="true" />
+        <TextView
+            android:id="@+id/txtFrequency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="How Often"
+            android:textSize="18sp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:id="@+id/spinnerFrequency"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/txtInputDescription"
+        android:id="@+id/gridLayout2">
+
+        <TextView
+            android:id="@+id/txtLength"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:text="Length of project"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/txtInputLengthHours"
+            android:layout_width="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:hint="2"
+            android:inputType="number"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/txtHours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Hours" />
+
+        <EditText
+            android:id="@+id/txtInputLengthMinute"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="10dp"
+            android:ems="10"
+            android:hint="15"
+            android:inputType="number"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/txtMinutes"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minutes" />
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/txtInputDate"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/txtMember"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:text="Group Member"
+                android:textSize="18sp"
+                android:layout_alignBottom="@+id/spinnerMember"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Spinner
+                android:id="@+id/spinnerMember"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <TextView
-        android:text="Project Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/txtName"
-        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/txtInputName"
         android:layout_alignBottom="@+id/txtInputName"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:text="Project Name"
+        android:textSize="18sp" />
 
-    <TextView
-        android:text="Description"
+    <EditText
+        android:id="@+id/txtInputName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="Project Name"
+        android:inputType="textPersonName" />
+
+    <TextView
         android:id="@+id/txtDescription"
-        android:textSize="16sp"
-        android:layout_below="@+id/txtInputName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="13dp" />
+        android:layout_alignRight="@+id/txtName"
+        android:layout_below="@+id/txtInputName"
+        android:layout_marginTop="13dp"
+        android:text="Description"
+        android:textSize="18sp" />
 
     <EditText
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
         android:id="@+id/txtInputDescription"
-        android:layout_below="@+id/txtInputName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/txtInputName"
         android:layout_alignStart="@+id/txtInputName"
+        android:layout_below="@+id/txtInputName"
+        android:ems="10"
         android:hint="Project Description"
-        android:minLines="3"
-        android:layout_width="match_parent" />
-
-    <TextView
-        android:text="Length of project"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtLength"
-        android:textSize="16sp"
-        android:layout_marginTop="13dp"
-        android:layout_below="@+id/txtInputDescription"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:id="@+id/editText7"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/txtInputDescription"
-        android:layout_toRightOf="@+id/txtLength"
-        android:ems="10"
-        android:hint="1"
-        android:inputType="number"
-        android:textAlignment="center" />
-
-    <TextView
-        android:text="Hours"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView5"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_alignTop="@+id/txtLength"
-        android:layout_toRightOf="@+id/editText7"
-        android:layout_toEndOf="@+id/editText7" />
-
-    <TextView
-        android:text="Minutes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView7"
-        android:layout_marginRight="22dp"
-        android:layout_marginEnd="22dp"
-        android:layout_alignBaseline="@+id/txtLength"
-        android:layout_alignBottom="@+id/txtLength"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <EditText
-        android:id="@+id/txtInputLengthHour"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="15"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:layout_alignBaseline="@+id/textView5"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_toLeftOf="@+id/textView7"
-        android:layout_toStartOf="@+id/textView7"
-        android:layout_marginRight="12dp"
-        android:layout_marginEnd="12dp" />
+        android:inputType="textMultiLine"
+        android:minLines="3" />
 
     <Button
         android:id="@+id/firebase_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="23dp"
+        android:layout_marginBottom="17dp"
         android:text="Click to change"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/txtDateDoneBy"
-        android:layout_toEndOf="@+id/txtDateDoneBy"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp" />
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/txtDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/txtDescription"
+        android:layout_below="@+id/gridLayout2"
+        android:layout_marginTop="12dp"
+        android:text="Due Date"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/txtInputDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/gridLayout2"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp"
+        android:text="Require Completion Picture"
+        android:textSize="18sp"
+        android:layout_alignBottom="@+id/checkBoxCompletion"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCompletion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_toRightOf="@+id/firebase_btn"
+        android:layout_toEndOf="@+id/firebase_btn" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="14dp"
+        android:text="Add Picture"
+        android:textSize="18sp" />
 
 </RelativeLayout>

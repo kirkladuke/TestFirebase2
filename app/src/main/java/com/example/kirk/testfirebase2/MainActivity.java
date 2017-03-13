@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,7 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if(firebaseAuth.getCurrentUser() == null)
                 {
-                    Intent loginIntent = new Intent(MainActivity.this, RegisterActivity.class);
+                    Intent loginIntent = new Intent(MainActivity.this, GoogleSignInActivity.class);
+
+                    // This is from old register activity  DELETE WHEN DONE WITH IT
+                    //Intent loginIntent = new Intent(MainActivity.this, RegisterActivity.class);
                     loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(loginIntent);
                 }
@@ -77,5 +82,25 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth.addAuthStateListener(mAuthListener);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == R.id.LogOut)
+        {
+            mAuth.signOut();
+
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

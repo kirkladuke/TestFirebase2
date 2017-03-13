@@ -6,4 +6,22 @@
     android:layout_height="match_parent"
     tools:context="com.example.kirk.testfirebase2.QuestionActivity">
 
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="214dp"
+        android:layout_height="121dp"
+        android:ems="10"
+        android:hint="Ask your Question here..."
+        android:inputType="textMultiLine"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="31dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="308dp"
+        android:layout_height="203dp"
+        app:srcCompat="@drawable/ic_add_a_photo_black_24dp"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="192dp" />
 </android.support.constraint.ConstraintLayout>

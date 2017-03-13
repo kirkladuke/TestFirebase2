@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">TestFirebase2</string>
+    
+    // This array needs to be deleted when member groups added
+    <string-array name="Member_Names">
+        <item>All</item>
+        <item>Kirk</item>
+        <item>Jason</item>
+        <item>Rick</item>
+
+    </string-array>
+
+    <string-array name="Frequency">
+        <item>One Time</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+    </string-array>
+
+
+
 </resources>

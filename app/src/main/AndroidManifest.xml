@@ -17,7 +17,9 @@
         </activity>
         <activity android:name=".ProjectCreationActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".QuestionActivity"></activity>
+        <activity android:name=".QuestionActivity" />
+        <activity android:name=".GoogleSignInActivity"></activity>
+
     </application>
 
 </manifest>
